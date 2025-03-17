@@ -13,5 +13,9 @@ public class Main {
         DbService dbService1 = beanFactory.getInstanceOf(DbService.class);
         DbService dbService2 = beanFactory.getInstanceOf(DbService.class);
         System.out.println("Instances of DBService are the same? " + (dbService1 == dbService2));
+
+        // use @inject annotation
+        MyApplication myApplication = beanFactory.getInstanceOf(MyApplication.class);
+        System.out.println("MyApplication has been created with a DbService: " + myApplication.isSbServiceSet());
     }
 }
