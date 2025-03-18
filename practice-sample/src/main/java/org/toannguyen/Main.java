@@ -19,6 +19,7 @@ import org.toannguyen.decorator.BasicNotification;
 import org.toannguyen.decorator.EncryptedNotificationDecorator;
 import org.toannguyen.decorator.LoggingNotificationDecorator;
 import org.toannguyen.decorator.TrackingNotificationDecorator;
+import org.toannguyen.proxy.NotificationServiceProxy;
 
 public class Main {
     public static void main(String[] args) {
@@ -63,5 +64,16 @@ public class Main {
 
         // send email with full feature
         fullFeaturedNotification.sendNotification("user@example.com", "Security Alert", "Your account was accessed from a new device");
+
+        System.out.println("============");
+
+        // proxy
+        NotificationChannel notificationService = new NotificationServiceProxy(emailChannel);
+        String recipient = "user@example.com";
+
+        for (int i = 1; i <= 7; i++) {
+            System.out.println("\n--- Sending notification #" + i + " ---");
+            notificationService.sendNotification(recipient, "Notification #" + i, "This is notification #" + i);
+        }
     }
 }
