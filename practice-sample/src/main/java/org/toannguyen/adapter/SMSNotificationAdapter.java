@@ -1,6 +1,6 @@
-package org.toannguyen.adapter.newer;
+package org.toannguyen.adapter;
 
-import org.toannguyen.adapter.older.SMSService;
+import org.toannguyen.common.older.SMSService;
 
 public class SMSNotificationAdapter implements NotificationSender {
     private SMSService smsService;

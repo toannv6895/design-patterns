@@ -1,4 +1,4 @@
-package org.toannguyen.bridge;
+package org.toannguyen.common.newer;
 
 public class SMSChannel implements NotificationChannel {
     @Override

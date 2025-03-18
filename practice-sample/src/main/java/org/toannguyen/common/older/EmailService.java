@@ -1,4 +1,4 @@
-package org.toannguyen.adapter.older;
+package org.toannguyen.common.older;
 
 public class EmailService {
     public void sendEmail(String recipient, String subject, String body) {

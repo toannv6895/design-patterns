@@ -1,4 +1,4 @@
-package org.toannguyen.adapter.older;
+package org.toannguyen.common.older;
 
 public class PushNotificationService {
     public void pushNotification(String userId, String title, String content) {

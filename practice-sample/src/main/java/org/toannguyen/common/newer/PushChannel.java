@@ -1,4 +1,4 @@
-package org.toannguyen.bridge;
+package org.toannguyen.common.newer;
 
 public class PushChannel implements NotificationChannel {
     @Override

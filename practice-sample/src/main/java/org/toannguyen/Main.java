@@ -1,18 +1,20 @@
 package org.toannguyen;
 
-import org.toannguyen.adapter.newer.EmailNotificationAdapter;
-import org.toannguyen.adapter.newer.NotificationSender;
-import org.toannguyen.adapter.newer.PushNotificationAdapter;
-import org.toannguyen.adapter.newer.SMSNotificationAdapter;
-import org.toannguyen.adapter.older.EmailService;
-import org.toannguyen.adapter.older.PushNotificationService;
-import org.toannguyen.adapter.older.SMSService;
-import org.toannguyen.bridge.*;
-import org.toannguyen.bridge.newer.HTMLNotification;
-import org.toannguyen.bridge.newer.JSONNotification;
-import org.toannguyen.bridge.NotificationChannel;
-import org.toannguyen.bridge.newer.Notification;
-import org.toannguyen.bridge.newer.TextNotification;
+import org.toannguyen.adapter.EmailNotificationAdapter;
+import org.toannguyen.adapter.NotificationSender;
+import org.toannguyen.adapter.PushNotificationAdapter;
+import org.toannguyen.adapter.SMSNotificationAdapter;
+import org.toannguyen.common.newer.EmailChannel;
+import org.toannguyen.common.newer.PushChannel;
+import org.toannguyen.common.newer.SMSChannel;
+import org.toannguyen.common.older.EmailService;
+import org.toannguyen.common.older.PushNotificationService;
+import org.toannguyen.common.older.SMSService;
+import org.toannguyen.bridge.HTMLNotification;
+import org.toannguyen.bridge.JSONNotification;
+import org.toannguyen.common.newer.NotificationChannel;
+import org.toannguyen.bridge.Notification;
+import org.toannguyen.bridge.TextNotification;
 
 public class Main {
     public static void main(String[] args) {

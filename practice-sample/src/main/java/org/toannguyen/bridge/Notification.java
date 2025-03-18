@@ -1,6 +1,6 @@
-package org.toannguyen.bridge.newer;
+package org.toannguyen.bridge;
 
-import org.toannguyen.bridge.NotificationChannel;
+import org.toannguyen.common.newer.NotificationChannel;
 
 public abstract class Notification {
     protected NotificationChannel channel;

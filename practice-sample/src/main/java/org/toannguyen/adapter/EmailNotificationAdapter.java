@@ -1,6 +1,6 @@
-package org.toannguyen.adapter.newer;
+package org.toannguyen.adapter;
 
-import org.toannguyen.adapter.older.EmailService;
+import org.toannguyen.common.older.EmailService;
 
 public class EmailNotificationAdapter implements NotificationSender {
     private EmailService emailService;

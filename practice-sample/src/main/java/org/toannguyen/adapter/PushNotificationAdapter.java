@@ -1,6 +1,6 @@
-package org.toannguyen.adapter.newer;
+package org.toannguyen.adapter;
 
-import org.toannguyen.adapter.older.PushNotificationService;
+import org.toannguyen.common.older.PushNotificationService;
 
 public class PushNotificationAdapter implements NotificationSender {
     private PushNotificationService pushService;
