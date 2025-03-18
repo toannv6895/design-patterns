@@ -3,20 +3,17 @@ package org.toannguyen.proxy;
 import org.toannguyen.common.newer.NotificationChannel;
 import org.toannguyen.decorator.BasicNotification;
 
-import java.util.HashMap;
-import java.util.Map;
-
-public class NotificationServiceProxy implements NotificationChannel {
-    BasicNotification realNotification;
-    private Map<String, Integer> notificationCount = new HashMap<>();
-    private int MAX_NOTIFICATIONS_PER_RECIPIENT = 5;
-
+public class NotificationServiceProxy extends NotificationProxy {
     public NotificationServiceProxy(NotificationChannel channel) {
-        this.realNotification = new BasicNotification(channel);
+        this.realNotificationChanel = channel;
     }
 
     @Override
     public void sendNotification(String recipient, String title, String content) {
+        if (this.realNotification == null) {
+            this.realNotification = new BasicNotification(realNotificationChanel);
+        }
+
         int count = notificationCount.getOrDefault(recipient, 0);
 
         if (count >= MAX_NOTIFICATIONS_PER_RECIPIENT) {
