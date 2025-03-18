@@ -15,6 +15,10 @@ import org.toannguyen.bridge.JSONNotification;
 import org.toannguyen.common.newer.NotificationChannel;
 import org.toannguyen.bridge.Notification;
 import org.toannguyen.bridge.TextNotification;
+import org.toannguyen.decorator.BasicNotification;
+import org.toannguyen.decorator.EncryptedNotificationDecorator;
+import org.toannguyen.decorator.LoggingNotificationDecorator;
+import org.toannguyen.decorator.TrackingNotificationDecorator;
 
 public class Main {
     public static void main(String[] args) {
@@ -48,5 +52,16 @@ public class Main {
         htmlEmailNotification.send("user@example.com", "Newsletter", "Check out our latest products!");
         jsonPushNotification.send("user123", "New message", "You have a new message");
         textSMSNotification.send("+1234567890", "Verification", "Your code is 123456");
+
+        System.out.println("============");
+
+        // decorator
+        NotificationChannel basicNotification = new BasicNotification(emailChannel);
+        NotificationChannel trackedNotification = new TrackingNotificationDecorator(basicNotification);
+        NotificationChannel encryptedTrackedNotification = new EncryptedNotificationDecorator(trackedNotification);
+        NotificationChannel fullFeaturedNotification = new LoggingNotificationDecorator(encryptedTrackedNotification);
+
+        // send email with full feature
+        fullFeaturedNotification.sendNotification("user@example.com", "Security Alert", "Your account was accessed from a new device");
     }
 }
